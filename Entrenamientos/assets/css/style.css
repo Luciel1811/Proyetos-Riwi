@@ -1,0 +1,213 @@
+/* In this file, we find all the main styles that allow the My Portfolio 
+website to look the way it does.This includes the general layout, colors, 
+typography, and everything else necessary to ensure everything is located 
+where it belongs.*/
+
+/*The font used on the website*/
+*{
+    font-family:'Nunito Sans','sans-serif';
+}
+/* The image used in the background of the web page*/
+body {
+    background-image:url('../img/fondo.jpg');
+    backdrop-filter: blur(2px);
+
+}
+/* The cream-colored container that stores all the information on the website */
+.page{
+    padding: 20px;
+    background-color: rgb(250,242,228);
+    margin: 20px auto;
+    max-width: 65%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* Color assignment for the title and subtitles*/
+#title{
+    color: rgb(156, 30, 30);
+}
+#title b{
+    color: rgb(132, 184, 77);
+}
+h1{
+    text-align: center;
+}
+h2{
+    color: rgb(209, 47, 47);
+}
+h3{
+    color: rgb(132, 184, 77);
+}
+h3 b{
+    color: rgb(156, 30, 30);
+}
+h2{
+    text-align: center;
+}
+/* Configure the menu bar, its content, and animations*/
+.links{
+	background-color: rgb(250,242,228);
+	border-bottom: 1px solid rgba(132, 184, 77);
+	font-size: 2em;
+	font-weight: 300;
+}
+.links a{
+	color: rgb(132, 184, 77);
+	padding: .75em;
+	text-align: center;
+	text-decoration: none;
+	transition: all .5s;
+}
+.links a:hover{
+	background: rgba(132, 184, 77, 0.2);
+	color: rgb(156, 30, 30);
+}
+.links .line{
+	background: rgb(156, 30, 30);
+	height: 2px;
+	pointer-events: none;
+}
+#header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+.links{
+	display: grid;
+	grid-template-columns: repeat(var(--items), 1fr);
+	position: relative;
+}
+.links .line{
+	opacity: 0;
+	transition: all .5s;
+	position: absolute;
+	bottom: 0;
+	left: var(--left, calc(100% / var(--items) * (var(--index) - 1)));
+	width: var(--width, calc(100% / var(--items)));
+	--index: 0;
+}
+/* Thanks to this code fragment, the line 
+runs through the menu. */
+.links a:hover ~ .line {
+	opacity: 1;
+}
+.links > a:nth-of-type(1):hover ~ .line { --index: 1; }
+.links > a:nth-of-type(2):hover ~ .line { --index: 2; }
+.links > a:nth-of-type(3):hover ~ .line { --index: 3; }
+
+/* the description text is located */
+section#about-me p{
+    display: flex;
+    margin: 16px 0px 16px 45px;
+}
+/* The image and skills list space, size, shape
+and color of its container are configured.*/
+section img{
+    border-radius: 30px;
+}
+.box-content.box-content-image img{
+    width: 55%;
+}
+.image{
+    display: flex;
+    width: 100%;
+    max-width: 100vw;
+    justify-content: space-evenly
+}
+.box-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 40px 0px 0px;
+}
+.skills-title{
+    margin-top: 15%;
+    margin-right: 25%;
+}
+ul.skills{
+    margin-right: 20%;
+}
+.box-content-image {
+    margin: 15px;
+    padding: 15px;
+    border-radius: 30px;
+    justify-content: center;
+}
+.box-content-image img {
+    background-color: rgba(132, 184, 77, 0.4);
+    padding: 15px;
+    border-radius: 40px;
+}
+/* The image and text space, size, shape
+ and color of its container are configured. */
+#project-images{
+    text-align: center;
+    color: rgb(156, 30, 30);
+}
+section#projects{
+    margin: 16px 0px 16px 45px;
+}
+div.code-images{
+    display: flex;
+    padding: 20px 10px;
+    justify-content: center;
+    background-color: rgba(132, 184, 77, 0.4);
+    border-radius: 40px;
+    width: 40%;
+    margin:auto;
+}
+div.code-images img{
+    width: 100%;
+}
+/* The project table, the space for each element, the color,
+the border thickness, and its location are configured.*/
+table{
+    display: flex;
+    justify-content: center;
+}
+th, td{
+    border:2px solid rgb(132, 184, 77);
+    padding: 15px;
+    }
+td.link, a{
+    color: green;
+}
+/* The contact modules are configured, 
+including color, size, and location.*/
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 30px;
+}
+form input,form textarea, input{
+    display: flex;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    border: 1.5px solid rgb(132, 184, 77);
+    border-radius: 4px;
+    }
+/* social media icons space */
+.social-media{
+    display: flex;
+    margin-left: 40%;
+    max-width: 25%;
+}
+div.social-media a img{
+    display: flex;
+    width: 55%;
+    transition: all 0.8s ease;
+}
+a img#git:hover{
+    filter: grayscale(1);
+    transition: all 0.6s ease;
+}
+a img#youtube:hover{
+    filter: grayscale(1);
+    transition: all 0.6s ease;
+}
+/* The color of the footnote quote is selected.*/
+cite{
+    color: rgb(156, 30, 30);
+}
